@@ -15,7 +15,6 @@ print(
     "____________________________________________________________________________________\n"
 )
 
-
 # 02 - Tokenização aplicado nos títulos dos livros e caracteres convertidos pra minúsculas.
 regex_token_titulo = r'<h3><a .*? title="(.*?)">'
 match_token_titulo = re.findall(regex_token_titulo, mock, re.DOTALL)
@@ -103,12 +102,14 @@ match_titulo_contractions = re.findall(regex_titulo_contractions, mock, re.DOTAL
 largura_coluna = 95
 print("08 - Títulos de todos os livros da página com contrações expandidas: \n")
 print(
-    "*** Contrações são a fusão de duas palavras em uma, facilitando a fala ou escrita. \nEste processo pode incluir a remoção de letras e espaços, transformando duas\npalavras independentes em uma única palavra contraída ***\n"
+    "*** Contrações são a fusão de duas palavras em uma, facilitando a fala ou escrita. \nEste processo pode incluir a remoção de letras e espaços, transformando duas\npalavras independentes em uma única palavra contraída. ***\n"
 )
+print("-" * 150)
 print(
     f"{'Título Original'.ljust(largura_coluna)}|{'Título com Contrações Expandidas'.ljust(largura_coluna)}"
 )
-print("-" * (largura_coluna * 2 + 1))  # tabela
+print("-" * 150)
+ # tabela
 for titulo_contractions in match_titulo_contractions:
     # Aplicando a expansão de contrações no título
     titulo_expandido = contractions.fix(titulo_contractions)
